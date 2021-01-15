@@ -24,10 +24,9 @@ public class TransactionDaoImpl implements TransactionDao<Transaction, Long> {
 
             session.beginTransaction();
 
-            for (Transaction transaction : transactions) {
-                session.save(transaction);
-            }
-            session.flush();
+            for (Transaction transaction : transactions)
+                session.saveOrUpdate(transaction);
+
             session.getTransaction().commit();
         }
     }

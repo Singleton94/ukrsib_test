@@ -1,10 +1,10 @@
 package com.gmail.andrew94.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * @author Andrew Samoilov
@@ -13,17 +13,17 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@ToString
 @Builder
-@Entity
-@Table(name = "client")
+@EqualsAndHashCode
+@Embeddable
+//@Entity
+//@Table(name = "client")
 public class Client {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id")
-    @JsonIgnore
-    private Long id;
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.AUTO)
+//    @Column(name = "id")
+//    private Long id;
 
     @Column(name = "first_name")
     private String firstName;
@@ -37,8 +37,8 @@ public class Client {
     @Column(name = "inn")
     private int inn;
 
-    @OneToMany(mappedBy = "client", fetch = FetchType.LAZY)
-    @JsonIgnore
-    private List<Transaction> transactions;
+//    @OneToMany(mappedBy = "client", fetch = FetchType.LAZY)
+//    private List<Transaction> transactions;
+
 
 }

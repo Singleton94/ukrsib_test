@@ -1,5 +1,7 @@
 package com.gmail.andrew94;
 
+import com.gmail.andrew94.dao.ClientDao;
+import com.gmail.andrew94.dao.ClientDaoImpl;
 import com.gmail.andrew94.dao.TransactionDao;
 import com.gmail.andrew94.dao.TransactionDaoImpl;
 import com.gmail.andrew94.entity.*;
@@ -10,7 +12,8 @@ import org.hibernate.internal.SessionFactoryImpl;
 
 import javax.xml.stream.XMLStreamException;
 import java.io.*;
-import java.util.List;
+import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * @author Andrew Samoilov
@@ -23,13 +26,12 @@ public class Main {
         SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
 
         TransactionDao<Transaction, Long> transactionDao = new TransactionDaoImpl(sessionFactory);
+
         transactionDao.saveAll(transactions);
 
         sessionFactory.close();
-
-        int t = 4;
-
-
     }
+
+
 }
 
