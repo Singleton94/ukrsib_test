@@ -16,14 +16,7 @@ import java.util.Objects;
 @Builder
 @EqualsAndHashCode
 @Embeddable
-//@Entity
-//@Table(name = "client")
 public class Client {
-
-//    @Id
-//    @GeneratedValue(strategy = GenerationType.AUTO)
-//    @Column(name = "id")
-//    private Long id;
 
     @Column(name = "first_name")
     private String firstName;
@@ -36,9 +29,4 @@ public class Client {
 
     @Column(name = "inn")
     private int inn;
-
-//    @OneToMany(mappedBy = "client", fetch = FetchType.LAZY)
-//    private List<Transaction> transactions;
-
-
 }
