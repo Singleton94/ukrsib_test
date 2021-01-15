@@ -22,7 +22,6 @@ public class Main {
 
             TransactionDao<Transaction, Long> transactionDao = new TransactionDaoImpl(sessionFactory);
 
-
             transactionDao.saveAll(transactions);
         }
 
