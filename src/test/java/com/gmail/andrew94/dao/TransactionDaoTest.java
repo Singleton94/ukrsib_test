@@ -23,7 +23,7 @@ public class TransactionDaoTest {
 
 
     @BeforeAll
-    static void setup() throws Exception {
+    public static void setup() throws Exception {
         sessionFactory = new Configuration().configure().buildSessionFactory();
     }
 
